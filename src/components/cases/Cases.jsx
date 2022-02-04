@@ -1,6 +1,13 @@
 import "./_cases.scss";
+import { useState } from "react";
 
 const Cases = () => {
+  const [input, setInput] = useState();
+
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
+
   return (
     <>
       <div className="container">
@@ -11,7 +18,11 @@ const Cases = () => {
           существительное в именительном падеже в единственном числе, выбери
           кнопку с названием падежа.
         </h2>
-        <input className="inputCase" type="text" />
+        <input
+          className="inputCase"
+          type="text"
+          onChange={(e) => handleInput(e)}
+        />
         <div>
           {" "}
           <button>Именительный падеж</button>
