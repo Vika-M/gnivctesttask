@@ -1,0 +1,17 @@
+@import "../Assets/variabless";
+
+.container {
+  .inputCase {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  button {
+    margin-left: 1.5rem;
+    background-color: $colorButton;
+    color: $colorFonts;
+    border-radius: 0.5rem;
+  }
+  button:hover {
+    background-color: #191970;
+  }
+}
