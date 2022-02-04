@@ -8,6 +8,10 @@ const Cases = () => {
     setInput(e.target.value);
   };
 
+  const addWords = () => {
+    console.log(input);
+  };
+
   return (
     <>
       <div className="container">
@@ -25,7 +29,7 @@ const Cases = () => {
         />
         <div>
           {" "}
-          <button>Именительный падеж</button>
+          <button onClick={addWords}>Именительный падеж</button>
           <button>Родительный падеж</button>
           <button>Дательный падеж</button>
           <button>Винительный падеж</button>
