@@ -14,14 +14,14 @@ const Cases = () => {
   };
 
   const rodit = () => {
+    // очень много повторяющегося кода, еще не доразбиралась как сокрвтить не на чистом js, а в react js.
     console.log(input);
-    let end = input.toLowerCase().slice(-1);
-    console.log(end);
-    let start = input.toLowerCase().slice(0, -1);
-    console.log(start);
+    let end = input.toLowerCase().slice(-1); // в эту переменную добавляем окончание введёного слова
+    let start = input.toLowerCase().slice(0, -1); // в эту переменную помещаем введёное слово без окончания
     if (input == "") {
       alert("Поле не заполнено");
     } else if (end == "а" || end == "ь" || end == "я") {
+      // с помощью условий подбираем нужное окончание
       const word = start + "и(ы)";
       setWord(word);
     } else if (end == "о") {
@@ -36,11 +36,8 @@ const Cases = () => {
   };
 
   const dat = () => {
-    console.log(input);
     let end = input.toLowerCase().slice(-1);
-    console.log(end);
     let start = input.toLowerCase().slice(0, -1);
-    console.log(start);
     if (input == "") {
       alert("Поле не заполнено");
     } else if (end == "а" || end == "я") {
@@ -61,11 +58,8 @@ const Cases = () => {
   };
 
   const vinit = () => {
-    console.log(input);
     let end = input.toLowerCase().slice(-1);
-    console.log(end);
     let start = input.toLowerCase().slice(0, -1);
-    console.log(start);
     if (input == "") {
       alert("Поле не заполнено");
     } else if (end == "а") {
@@ -82,11 +76,8 @@ const Cases = () => {
   };
 
   const tvorit = () => {
-    console.log(input);
     let end = input.toLowerCase().slice(-1);
-    console.log(end);
     let start = input.toLowerCase().slice(0, -1);
-    console.log(start);
     if (input == "") {
       alert("Поле не заполнено");
     } else if (end == "я") {
@@ -110,11 +101,8 @@ const Cases = () => {
   };
 
   const predl = () => {
-    console.log(input);
     let end = input.toLowerCase().slice(-1);
-    console.log(end);
     let start = input.toLowerCase().slice(0, -1);
-    console.log(start);
     if (input == "") {
       alert("Поле не заполнено");
     } else if (end == "а" || end == "я" || end == "о") {
