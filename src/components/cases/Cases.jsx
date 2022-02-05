@@ -3,13 +3,129 @@ import { useState } from "react";
 
 const Cases = () => {
   const [input, setInput] = useState();
+  const [newwords, setWord] = useState();
 
   const handleInput = (e) => {
     setInput(e.target.value);
   };
 
-  const addWords = () => {
+  const name = () => {
+    setWord(input);
+  };
+
+  const rodit = () => {
     console.log(input);
+    let end = input.toLowerCase().slice(-1);
+    console.log(end);
+    let start = input.toLowerCase().slice(0, -1);
+    console.log(start);
+    if (input == "") {
+      alert("Поле не заполнено");
+    } else if (end == "а" || end == "ь" || end == "я") {
+      const word = start + "и(ы)";
+      setWord(word);
+    } else if (end == "о") {
+      const word = start + "а";
+      setWord(word);
+    } else if (end == "е") {
+      const word = start + "я";
+      setWord(word);
+    } else {
+      alert("Попробуйте другое слово");
+    }
+  };
+
+  const dat = () => {
+    console.log(input);
+    let end = input.toLowerCase().slice(-1);
+    console.log(end);
+    let start = input.toLowerCase().slice(0, -1);
+    console.log(start);
+    if (input == "") {
+      alert("Поле не заполнено");
+    } else if (end == "а" || end == "я") {
+      const word = start + "е";
+      setWord(word);
+    } else if (end == "о") {
+      const word = start + "у";
+      setWord(word);
+    } else if (end == "е") {
+      const word = start + "ю";
+      setWord(word);
+    } else if (end == "ь") {
+      const word = start + "и";
+      setWord(word);
+    } else {
+      alert("Попробуйте другое слово");
+    }
+  };
+
+  const vinit = () => {
+    console.log(input);
+    let end = input.toLowerCase().slice(-1);
+    console.log(end);
+    let start = input.toLowerCase().slice(0, -1);
+    console.log(start);
+    if (input == "") {
+      alert("Поле не заполнено");
+    } else if (end == "а") {
+      const word = start + "у";
+      setWord(word);
+    } else if (end == "я") {
+      const word = start + "ю";
+      setWord(word);
+    } else if (end == "ь" || end == "о" || end == "е") {
+      setWord(input);
+    } else {
+      alert("Попробуйте другое слово");
+    }
+  };
+
+  const tvorit = () => {
+    console.log(input);
+    let end = input.toLowerCase().slice(-1);
+    console.log(end);
+    let start = input.toLowerCase().slice(0, -1);
+    console.log(start);
+    if (input == "") {
+      alert("Поле не заполнено");
+    } else if (end == "я") {
+      const word = start + "ей(ею)";
+      setWord(word);
+    } else if (end == "а") {
+      const word = start + "ой(ою)";
+      setWord(word);
+    } else if (end == "о") {
+      const word = start + "ом";
+      setWord(word);
+    } else if (end == "е") {
+      const word = start + "ем";
+      setWord(word);
+    } else if (end == "ь") {
+      const word = start + "ью";
+      setWord(word);
+    } else {
+      alert("Попробуйте другое слово");
+    }
+  };
+
+  const predl = () => {
+    console.log(input);
+    let end = input.toLowerCase().slice(-1);
+    console.log(end);
+    let start = input.toLowerCase().slice(0, -1);
+    console.log(start);
+    if (input == "") {
+      alert("Поле не заполнено");
+    } else if (end == "а" || end == "я" || end == "о") {
+      const word = start + "е";
+      setWord(word);
+    } else if (end == "ь" || end == "е") {
+      const word = start + "и";
+      setWord(word);
+    } else {
+      alert("Попробуйте другое слово");
+    }
   };
 
   return (
@@ -26,18 +142,22 @@ const Cases = () => {
           className="inputCase"
           type="text"
           onChange={(e) => handleInput(e)}
+          value={input}
         />
         <div>
           {" "}
-          <button onClick={addWords}>Именительный падеж</button>
-          <button>Родительный падеж</button>
-          <button>Дательный падеж</button>
-          <button>Винительный падеж</button>
-          <button>Творительный падеж</button>
-          <button>Предложный падеж</button>
+          <button onClick={name}>Именительный падеж</button>
+          <button onClick={rodit}>Родительный падеж</button>
+          <button onClick={dat}>Дательный падеж</button>
+          <button onClick={vinit}>Винительный падеж</button>
+          <button onClick={tvorit}>Творительный падеж</button>
+          <button onClick={predl}>Предложный падеж</button>
         </div>
         <p>Результат:</p>
-        <div className="result"></div>
+        <div className="wrapper-result">
+          {" "}
+          <div className="result">{newwords}</div>
+        </div>
       </div>
     </>
   );

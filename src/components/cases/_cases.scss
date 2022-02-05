@@ -14,4 +14,14 @@
   button:hover {
     background-color: #191970;
   }
+  .wrapper-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .result {
+      width: 200px;
+      height: 30px;
+      font-size: 3rem;
+    }
+  }
 }
